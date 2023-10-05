@@ -1,161 +1,120 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	background-image: linear-gradient(120deg, #74f3c2, #49a7aa);
-	color: rgb(20, 39, 37);
-	font-family: "Lato", sans-serif;
-	min-height: 100vh;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
-header {
-	font-size: 1.5rem;
+.container {
+  margin: 30px auto;
+  width: 350px;
 }
 
-header,
-form {
-	min-height: 20vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-form input {
-	border-radius: 10px 0px 0px 0px;
-}
-form button {
-	border-radius: 0px 0px 10px 0px;
-}
-form input,
-form button {
-	padding: 0.5rem;
-	font-size: 2rem;
-	border: none;
-	box-shadow: 4px 6px 4px 0.4px rgba(89, 156, 151, 0.5);
-	background: rgba(247, 253, 252, 0.788);
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
 }
 
-.todo-input,
-form button:focus {
-	outline: none;
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
 }
 
-form button {
-	color: rgb(71, 182, 182);
-	background: whitesmoke;
-	cursor: pointer;
+h4 {
+  margin: 0;
+  text-transform: uppercase;
 }
 
-form button:hover {
-	background: #1f5063;
-	color: white;
-	transition: all 0.4s ease;
+.inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
 }
 
-.todo-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
 }
 
-.todo-list {
-	min-width: 30%;
-	list-style: none;
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
 }
 
-.todo {
-	margin: 0.5rem;
-	background: whitesmoke;
-	color: #161616;
-	font-size: 1.5rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	transition: all 0.5s ease;
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
 }
 
-.todo li {
-	flex: 1;
+.money.plus {
+  color: #2ecc71;
 }
 
-.trash-btn,
-.complete-btn {
-	border: none;
-	padding: 1rem;
-	font-size: 1rem;
-	cursor: pointer;
+.money.minus {
+  color: #c0392b;
 }
 
-.complete-btn {
-	background: rgb(105, 226, 146);
+label {
+  display: inline-block;
+  margin: 10px 0;
 }
 
-.trash-btn {
-	background: rgb(238, 125, 125);
-}
-.todo-item {
-	padding: 0rem 0.5rem;
-}
-
-.fa-trash,
-.fa-check {
-	pointer-events: none;
-}
-.complete-btn:hover {
-	background: rgb(87, 218, 87);
-}
-.trash-btn:hover {
-	background: rgb(235, 76, 76);
+input[type='text'],
+input[type='number'] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
 }
 
-.completed {
-	text-decoration: line-through;
-	opacity: 0.5;
+.btn {
+  cursor: pointer;
+  background-color: #9c88ff;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
 }
 
-.fall {
-	transform: translateY(8rem) rotateZ(20deg);
-	opacity: 0;
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
 }
 
-select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	outline: none;
-	border: none;
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
 }
 
-.select {
-	margin: 1rem;
-	position: relative;
-	overflow: hidden;
-	box-shadow: 4px 6px 4px 0.4px rgba(89, 156, 151, 0.5);
-}
-select {
-	color: rgb(68, 134, 160);
-	width: 10rem;
-	cursor: pointer;
-	padding: 1rem;
-	border-radius: 10px;
-}
-
-.select::after {
-	content: "\25BC";
-	position: absolute;
-	background: #73d4c7;
-	top: 0;
-	right: 0;
-	padding: 1rem;
-	pointer-events: none;
-	transition: all 0.3s ease;
-}
-
-.select:hover::after {
-	background: white;
-	color: rgb(47, 206, 185);
-}
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
